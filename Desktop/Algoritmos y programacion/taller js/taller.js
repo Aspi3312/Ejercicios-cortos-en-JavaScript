@@ -128,3 +128,63 @@ let coche = {
 };
 
 coche.mostrarMarca();
+
+// Ejercicio 7.1 (Mutables)
+let frutas = ["Manzana", "Banana"];
+frutas.push("Naranja");
+console.log("Con push:", frutas);
+
+frutas.pop();
+console.log("Con pop:", frutas);
+
+// Ejercicio 7.2 (Inmutables)
+const numeros = [1, 2, 3];
+const duplicados = numeros.map(n => n * 2);
+const mayoresA1 = numeros.filter(n => n > 1);
+
+console.log("map (*2):", duplicados);
+console.log("filter (>1):", mayoresA1);
+
+// Ejercicio 7.3 (Iteración)
+frutas.forEach(fruta => console.log("Fruta:", fruta));
+
+const frutaEncontrada = frutas.find(fruta => fruta === "Banana");
+console.log("find Banana:", frutaEncontrada);
+
+const indiceManzana = frutas.findIndex(fruta => fruta === "Manzana");
+console.log("índice Manzana:", indiceManzana);
+
+// Ejercicio 8.1 (Métodos en Objetos)
+const libro = {
+  titulo: "Cien años de soledad",
+  autor: "Gabriel García Márquez",
+  mostrarInfo() {
+    console.log(`"${this.titulo}" fue escrito por ${this.autor}`);
+  }
+};
+libro.mostrarInfo();
+
+// Ejercicio 8.2 (Clases)
+class Animal {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+
+  saludar() {
+    return `Hola, soy ${this.nombre}`;
+  }
+}
+
+const miMascota = new Animal("Miño");
+console.log(miMascota.saludar());
+
+// Ejercicio 8.3 (Herencia de Clases)
+class Perro extends Animal {
+  constructor(nombre, raza) {
+    super(nombre);
+    this.raza = raza;
+  }
+}
+
+const miPerro = new Perro("Firulais", "Labrador");
+console.log(`${miPerro.saludar()} y soy un ${miPerro.raza}`);
